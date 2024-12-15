@@ -15,7 +15,7 @@ class Biblioteca():
         for identificador, livro in self.__estante:
             if identificador == id:
                 print("Livro repetido, não pode ser incluido")
-                return
+                return None
 
         novo = Livro(id, nome, genero, autor, preco)
         self.__estante[id] = novo
@@ -29,23 +29,15 @@ class Biblioteca():
         
         return None
     
-    def remover(self, id):
+    def removerPorId(self, id):
 
-        genero = None
-        autor = None
-        preco = None
+        livro = self.buscarPorId(id)
 
-        for identificador, livro in self.__estante:
+        genero = livro.getGenero()
+        autor = livro.getAutor()
+        preco = livro.getPreco()
 
-            if identificador == id:
-
-                livro = self.__estante[id]
-
-                genero = livro.getGenero()
-                autor = livro.getAutor()
-                preco = livro.getPreco()
-
-                self.__estante.pop(id)
+        self.__estante.pop(id)
 
         self.__listaInvertidaAutor.remover(autor, id)
         self.__listaInvertidaGenero.remover(genero, id)
