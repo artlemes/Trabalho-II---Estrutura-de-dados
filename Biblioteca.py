@@ -10,16 +10,10 @@ class Biblioteca():
     """
     def incluirLivro(self, id: int, nome: str, genero: str, autor: str, preco: int):
 
-        repetido = False
-
         for identificador, livro in self.__estante:
             if identificador == id:
-                repetido = True
-        
-        if not repetido:
+                print("Livro repetido, não pode ser incluido")
+                return
 
-            novo = Livro(id, nome, genero, autor, preco)
-
-            self.__estante[id] = novo
-        else:
-            print("Livro repetido, não pode ser incluido")
+        novo = Livro(id, nome, genero, autor, preco)
+        self.__estante[id] = novo
