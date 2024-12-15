@@ -1,0 +1,38 @@
+from Biblioteca import Biblioteca
+
+# Criando uma instância da classe Biblioteca
+biblioteca = Biblioteca()
+
+# Adicionando 30 livros com IDs aleatórios de 3 dígitos
+biblioteca.incluirLivro(101, "O Senhor dos Anéis", "Fantasia", "J.R.R. Tolkien", 50)
+biblioteca.incluirLivro(234, "1984", "Distopia", "George Orwell", 40)
+biblioteca.incluirLivro(312, "O Pequeno Príncipe", "Infantil", "Antoine de Saint-Exupéry", 30)
+biblioteca.incluirLivro(478, "Dom Casmurro", "Romance", "Machado de Assis", 35)
+biblioteca.incluirLivro(529, "A Revolução dos Bichos", "Distopia", "George Orwell", 25)
+biblioteca.incluirLivro(604, "Orgulho e Preconceito", "Romance", "Jane Austen", 45)
+biblioteca.incluirLivro(719, "Cem Anos de Solidão", "Ficção", "Gabriel García Márquez", 55)
+biblioteca.incluirLivro(845, "O Hobbit", "Fantasia", "J.R.R. Tolkien", 60)
+biblioteca.incluirLivro(963, "Crime e Castigo", "Drama", "Fiódor Dostoiévski", 50)
+biblioteca.incluirLivro(123, "O Código Da Vinci", "Mistério", "Dan Brown", 40)
+biblioteca.incluirLivro(256, "A Culpa é das Estrelas", "Romance", "John Green", 35)
+biblioteca.incluirLivro(341, "Harry Potter e a Pedra Filosofal", "Fantasia", "J.K. Rowling", 60)
+biblioteca.incluirLivro(489, "O Alquimista", "Ficção", "Paulo Coelho", 25)
+biblioteca.incluirLivro(530, "Drácula", "Terror", "Bram Stoker", 40)
+biblioteca.incluirLivro(604, "A Metamorfose", "Ficção", "Franz Kafka", 30)
+biblioteca.incluirLivro(761, "O Morro dos Ventos Uivantes", "Romance", "Emily Brontë", 45)
+biblioteca.incluirLivro(890, "O Nome da Rosa", "Mistério", "Umberto Eco", 55)
+biblioteca.incluirLivro(910, "It: A Coisa", "Terror", "Stephen King", 70)
+biblioteca.incluirLivro(111, "A Menina que Roubava Livros", "Ficção", "Markus Zusak", 35)
+biblioteca.incluirLivro(245, "O Velho e o Mar", "Drama", "Ernest Hemingway", 30)
+biblioteca.incluirLivro(378, "Os Miseráveis", "Drama", "Victor Hugo", 75)
+biblioteca.incluirLivro(482, "O Processo", "Ficção", "Franz Kafka", 50)
+biblioteca.incluirLivro(596, "O Iluminado", "Terror", "Stephen King", 60)
+biblioteca.incluirLivro(648, "Alice no País das Maravilhas", "Fantasia", "Lewis Carroll", 25)
+biblioteca.incluirLivro(731, "O Apanhador no Campo de Centeio", "Drama", "J.D. Salinger", 45)
+biblioteca.incluirLivro(846, "Moby Dick", "Aventura", "Herman Melville", 55)
+biblioteca.incluirLivro(967, "As Crônicas de Nárnia", "Fantasia", "C.S. Lewis", 65)
+biblioteca.incluirLivro(102, "O Grande Gatsby", "Romance", "F. Scott Fitzgerald", 40)
+biblioteca.incluirLivro(213, "O Senhor das Moscas", "Ficção", "William Golding", 35)
+biblioteca.incluirLivro(324, "A Guerra dos Mundos", "Ficção Científica", "H.G. Wells", 30)
+
+print("30 livros com IDs aleatórios foram adicionados com sucesso!")
