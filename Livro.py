@@ -1,3 +1,5 @@
+
+
 class Livro:
     def __init__(self, id: int, nome: str, genero: str, autor: str, preco: int):
         if not isinstance(id, int):
