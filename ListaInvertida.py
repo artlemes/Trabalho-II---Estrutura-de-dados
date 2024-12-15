@@ -13,10 +13,10 @@ class ListaInvertida:
 
     def remover(self, categoria, id: int):
         if categoria not in dict:
-            return
+            return None
 
         if id not in self.__dict[categoria]:
-            return
+            return None
 
         self.__dict[categoria].remove(id)
     
