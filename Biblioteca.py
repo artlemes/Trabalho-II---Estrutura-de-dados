@@ -17,8 +17,13 @@ class Biblioteca():
                 print("Livro repetido, não pode ser incluido")
                 return None
 
-        novo = Livro(id, nome, genero, autor, preco)
-        self.__estante[id] = novo
+        livroNovo = Livro(id, nome, genero, autor, preco)
+        
+        self.__estante[id] = livroNovo
+
+        self.__listaInvertidaAutor.incluir(livroNovo.getAutor(), id)
+        self.__listaInvertidaGenero.incluir(livroNovo.getGenero(), id)
+        self.__listaInvertidaPreco.incluir(livroNovo.getPreco(), id)
 
     def buscarPorId(self, id):
 
@@ -33,15 +38,11 @@ class Biblioteca():
 
         livro = self.buscarPorId(id)
 
-        genero = livro.getGenero()
-        autor = livro.getAutor()
-        preco = livro.getPreco()
+        self.__listaInvertidaAutor.remover(livro.getAutor(), id)
+        self.__listaInvertidaGenero.remover(livro.getGenero(), id)
+        self.__listaInvertidaPreco.remover(livro.getPreco(), id)
 
         self.__estante.pop(id)
-
-        self.__listaInvertidaAutor.remover(autor, id)
-        self.__listaInvertidaGenero.remover(genero, id)
-        self.__listaInvertidaPreco.remover(preco, id)
         
     def exibirTodosDados(self):
         print(self.__estante)
