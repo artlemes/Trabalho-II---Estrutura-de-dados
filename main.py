@@ -36,3 +36,5 @@ biblioteca.incluirLivro(213, "O Senhor das Moscas", "Ficção", "William Golding
 biblioteca.incluirLivro(324, "A Guerra dos Mundos", "Ficção Científica", "H.G. Wells", 30)
 
 print("30 livros com IDs aleatórios foram adicionados com sucesso!")
+
+print(biblioteca.buscaPorCategoria(precoCompLogica=">", precoValor=0, autor="George Orwell"))

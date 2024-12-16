@@ -8,13 +8,13 @@ class ListaInvertidaContinua(ListaInvertida):
     def buscaPorCategoria(self, sinal, valor):
 
         if sinal == "=":
-            if valor not in self.__dict:
+            if valor not in super().getDict():
                 return []
             
-            return self.__dict[valor]
+            return super().getDict()[valor]
 
         if sinal == ">":
-            keyList = self.__dict.keys()
+            keyList = list(super().getDict().keys())
 
             for key in keyList:
                 if not key > valor:
@@ -23,13 +23,13 @@ class ListaInvertidaContinua(ListaInvertida):
             returnList = []
 
             for key in keyList:
-                for value in self.__dict[key]:
+                for value in super().getDict()[key]:
                     returnList.append(value)
             
             return returnList
         
         if sinal == "<":
-            keyList = self.__dict.keys()
+            keyList = list(super().getDict().keys())
 
             for key in keyList:
                 if not key < valor:
@@ -38,7 +38,7 @@ class ListaInvertidaContinua(ListaInvertida):
             returnList = []
 
             for key in keyList:
-                for value in self.__dict[key]:
+                for value in super().getDict()[key]:
                     returnList.append(value)
             
             return returnList

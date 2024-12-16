@@ -12,9 +12,10 @@ class Biblioteca():
     
     def incluirLivro(self, id: int, nome: str, genero: str, autor: str, preco: int):
 
-        for identificador, livro in self.__estante:
+        for identificador in self.__estante:
+            livro = self.__estante[identificador]
             if identificador == id:
-                print("Livro repetido, não pode ser incluido")
+                print(f"Livro de nome '{livro.getNome()}' já tem este id, inclusão de '{nome}' falhou.")
                 return None
 
         livroNovo = Livro(id, nome, genero, autor, preco)
@@ -27,7 +28,8 @@ class Biblioteca():
 
     def buscarPorId(self, id):
 
-        for identificador, livro in self.__estante:
+        for identificador in self.__estante:
+            livro = self.__estante[identificador]
 
             if identificador == id:
                 return livro
@@ -52,8 +54,8 @@ class Biblioteca():
         listaRetorno = set()
 
         listaDeIdPorGenero = self.__listaInvertidaGenero.buscaPorCategoria(genero)
-        listaDeIdPorAutor = self.__listaInvertidaGenero.buscaPorCategoria(autor)
-        listaDeIdPorPreco = self.__listaInvertidaGenero.buscaPorCategoria(precoCompLogica, precoValor)
+        listaDeIdPorAutor = self.__listaInvertidaAutor.buscaPorCategoria(autor)
+        listaDeIdPorPreco = self.__listaInvertidaPreco.buscaPorCategoria(precoCompLogica, precoValor)
 
         if genero != None:
             listaRetorno = listaRetorno | set(listaDeIdPorGenero)
