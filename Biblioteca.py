@@ -10,6 +10,7 @@ class Biblioteca():
         self.__listaInvertidaAutor = ListaInvertida()
         self.__listaInvertidaPreco = ListaInvertidaContinua()
     
+    # Inclui um livro novo a biblioteca.
     def incluirLivro(self, id: int, nome: str, genero: str, autor: str, preco: int):
 
         for identificador in self.__estante:
@@ -26,6 +27,7 @@ class Biblioteca():
         self.__listaInvertidaAutor.incluir(livroNovo.getAutor(), id)
         self.__listaInvertidaPreco.incluir(livroNovo.getPreco(), id)
 
+    # Busca um único livro pelo seu identificador único (ID)
     def buscarPorId(self, id):
 
         for identificador in self.__estante:
@@ -36,6 +38,7 @@ class Biblioteca():
         
         return None
     
+    # Remover um único livro pelo seu identificar único (ID)
     def removerPorId(self, id):
 
         livro = self.buscarPorId(id)
@@ -46,6 +49,7 @@ class Biblioteca():
 
         self.__estante.pop(id)
 
+    # Busca todos os IDs (identificadores únicos) de livros com os parâmetros informados
     def buscaPorCategoria(self, genero = None, autor = None, precoCompLogica = None, precoValor = None):
 
         if precoCompLogica == None and precoValor != None:
@@ -74,5 +78,6 @@ class Biblioteca():
         
         return list(listaRetorno)
 
+    # Mostra todos os livros da bibliotéca
     def exibirTodosDados(self):
         print(self.__estante)
