@@ -38,3 +38,4 @@ biblioteca.incluirLivro(324, "A Guerra dos Mundos", "Ficção Científica", "H.G
 print("30 livros com IDs aleatórios foram adicionados com sucesso!")
 
 print(biblioteca.buscaPorCategoria(precoCompLogica=">", precoValor=0, autor="George Orwell"))
+print(biblioteca.buscaPorCategoria(precoCompLogica=">", precoValor=25, autor="George Orwell"))

@@ -55,26 +55,16 @@ class Biblioteca():
         if precoCompLogica == None and precoValor != None:
             precoCompLogica = "="
 
-        listaRetorno = set()
-
-        listaDeIdPorGenero = self.__listaInvertidaGenero.buscaPorCategoria(genero)
-        listaDeIdPorAutor = self.__listaInvertidaAutor.buscaPorCategoria(autor)
-        listaDeIdPorPreco = self.__listaInvertidaPreco.buscaPorCategoria(precoCompLogica, precoValor)
+        listaRetorno = set(self.__estante.keys())
 
         if genero != None:
-            listaRetorno = listaRetorno | set(listaDeIdPorGenero)
+            listaRetorno = listaRetorno & set(self.__listaInvertidaGenero.buscaPorCategoria(genero))
         
         if autor != None:
-            if genero != None:
-                listaRetorno = listaRetorno & set(listaDeIdPorAutor)
-            else:
-                listaRetorno = listaRetorno | set(listaDeIdPorAutor)
+            listaRetorno = listaRetorno & set(self.__listaInvertidaAutor.buscaPorCategoria(autor))
         
         if precoValor != None:
-            if genero != None or autor != None:
-                listaRetorno = listaRetorno & set(listaDeIdPorPreco)
-            else:
-                listaRetorno = listaRetorno | set(listaDeIdPorPreco)
+            listaRetorno = listaRetorno & set(self.__listaInvertidaPreco.buscaPorCategoria(precoCompLogica, precoValor))
         
         return list(listaRetorno)
 
